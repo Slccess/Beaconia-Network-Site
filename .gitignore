@@ -1,0 +1,14 @@
+# Local verification output: screenshots and reports (about 58 MB)
+preview/
+
+# Python caches
+tools/__pycache__/
+*.pyc
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Packaged deployment archive (published as a GitHub Release asset)
+*.zip

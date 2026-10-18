@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071c2d">
+  <meta name="description" content="灯塔服务器体系 Beaconia Network，始于2017年12月27日。人本、人文、人情——让每一束微光，都有归处。探索系内服务器与种子计划服务器。">
+  <title>灯塔服务器体系官网 · Beaconia Network</title>
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preload" href="assets/coast-shore.svg" as="image" media="(min-aspect-ratio:1/1)">
+  <link rel="preload" href="assets/coast-mobile-shore.svg" as="image" media="(max-aspect-ratio:1/1)">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="cinema.css">
+  <link rel="stylesheet" href="assets/calligraphy-fonts.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="content.css">
+  <script src="data.js" defer></script>
+  <script src="vendor/three-r180.js" defer></script>
+  <script src="coast3d.js" defer></script>
+  <script src="ocean.js" defer></script>
+  <script src="cinema.js" defer></script>
+  <script src="scene.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body data-view="home">
+  <a class="skip-link" href="#main" id="skip-content">跳到主要内容</a>
+  <div class="boot" id="boot" hidden role="dialog" aria-modal="true" aria-label="凝沙化塔">
+    <h2 class="boot-title">凝沙化塔</h2>
+    <div class="boot-meter sr-only" role="progressbar" aria-label="灯塔汇聚进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+    <p id="boot-status" class="sr-only" role="status">正在准备海岸</p>
+    <button id="boot-skip" class="boot-skip" type="button" aria-label="缩短开场动画"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 7 7 5-7 5Zm9 0 7 5-7 5Z"/></svg></button>
+  </div>
+  <canvas id="cinema-canvas" aria-hidden="true"></canvas>
+  <div id="site-shell">
+    <div class="coast-stage" id="coast-stage">
+      <div class="coast-art" aria-hidden="true"><div class="coast-sky"><i class="sun-haze"></i><i class="sky-cloud cloud-one"></i><i class="sky-cloud cloud-two"></i></div><canvas id="ocean-canvas"></canvas><picture class="shore-art"><source media="(max-aspect-ratio:1/1)" srcset="assets/coast-mobile-shore.svg"><img src="assets/coast-shore.svg" alt="" id="coast-art" fetchpriority="high"></picture><canvas id="three-canvas" aria-hidden="true"></canvas><canvas id="sea-canvas"></canvas><div class="coast-vignette"></div></div>
+      <div class="sky-flock" id="sky-flock" aria-label="海岸上空的大雁"></div>
+      <div class="detail-wash" aria-hidden="true"></div>
+      <svg class="tide-lines" id="tide-lines" aria-hidden="true"><defs><filter id="tide-glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3"/></filter><linearGradient id="tide-water" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#bbded9" stop-opacity=".18"/><stop offset=".5" stop-color="#87bbc2" stop-opacity=".08"/><stop offset="1" stop-color="#abcdd1" stop-opacity="0"/></linearGradient></defs><g data-wave="outer"><path class="wave-water"/><path class="wave-foam"/><path class="wave-halo"/><path class="wave-companion"/><path class="wave-line"/><path class="wave-glint"/></g><g data-wave="inner"><path class="wave-water"/><path class="wave-foam"/><path class="wave-halo"/><path class="wave-companion"/><path class="wave-line"/><path class="wave-glint"/></g></svg>
+      <nav class="sea-navigation" id="sea-navigation" aria-label="海浪上的服务器">
+        <div id="outer-nodes" role="group" aria-label="外环 · 种子计划服务器"></div>
+        <div id="inner-nodes" role="group" aria-label="内环 · 系内服务器"></div>
+      </nav>
+      <div class="ring-caption inner-caption"><span>01</span><i></i><b class="caption-name">系内服务器</b><small>Constituent Server Units</small></div>
+      <div class="ring-caption outer-caption"><span>02</span><i></i><b class="caption-name">种子计划<span class="caption-suffix">服务器</span></b><small>Seed Plan Servers</small></div>
+      <div class="seed-pager" id="seed-pager" hidden><button type="button" data-seed-page="-1" aria-label="上一组种子计划服务器">←</button><span id="seed-page-count" class="micro"></span><button type="button" data-seed-page="1" aria-label="下一组种子计划服务器">→</button></div>
+      <a class="back-coast" id="back-coast" href="#/home" aria-label="返回海岸首页"><span>↶</span><b>返回海岸</b></a>
+      <p class="return-hint"><span class="desktop-hint">右键空白处</span><span class="touch-hint">长按空白处</span><br>回到灯塔海岸 <span aria-hidden="true">↶</span></p>
+    </div>
+    <main id="main" tabindex="-1">
+      <div id="home-content"></div>
+      <div class="detail-shell" id="detail-shell" hidden tabindex="-1"><div id="detail-content"></div></div>
+    </main>
+    <div class="hold-indicator" id="hold-indicator" aria-hidden="true"></div>
+  </div>
+  <div class="sr-only" role="status" aria-live="polite" id="route-announcement"></div>
+  <noscript><div class="no-script">请开启 JavaScript，沿着海浪探索灯塔服务器体系。</div></noscript>
+</body>
+</html>

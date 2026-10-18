@@ -1,0 +1,90 @@
+/* Beaconia: an open shore, a handwritten epigraph, and a human story. */
+/* The icon matches the two-line brand block: 23px/1.3 strong + 5px + 9px/1.6 small = 49.3px. */
+.brand-icon{position:static;width:auto;height:49.3px;flex:none;object-fit:contain}
+.coast-brand strong,.footer-brand strong{display:block;font-size:23px;letter-spacing:.1em;white-space:nowrap}
+.coast-brand small,.footer-brand small{font:9px/1.6 var(--sans);letter-spacing:.19em;margin-top:5px}
+.edition{font:10px/1.6 var(--sans);letter-spacing:.18em}
+.hero-copy{top:auto;bottom:calc(100% - var(--coast-horizon,45.4svh) + clamp(24px,3.6svh,40px));max-width:65%}
+.hero-copy .eyebrow{font-size:11px;letter-spacing:.09em;line-height:1.9;gap:12px;margin-bottom:22px}
+.hero-copy .eyebrow>span{flex:none;width:24px}
+.hero-copy .eyebrow b{font-weight:400}
+.ring-caption .caption-name{font-size:inherit;font-weight:400;letter-spacing:inherit}
+body:not(.is-detail) .ring-caption{display:grid;grid-template-columns:auto 22px auto;column-gap:10px;row-gap:3px;align-items:center;line-height:1.4}
+body:not(.is-detail) .ring-caption>small{display:block;grid-column:1/-1;grid-row:2;margin:0;font:8px/1.4 var(--sans);letter-spacing:.04em}
+.has-three:not(.is-detail) .inner-caption small{display:block}
+.has-three:not(.is-detail) .inner-caption{top:calc(var(--coast-horizon,45.4svh) + 15px)}
+body:not(.is-detail) .outer-caption{top:calc(75svh - 16px)}
+.is-detail .caption-suffix{display:inline}
+@media(min-width:641px) and (max-width:1180px) and (min-aspect-ratio:1/1){
+ .has-three:not(.is-detail) .inner-caption{grid-template-columns:auto}
+ .has-three:not(.is-detail) .inner-caption>span,.has-three:not(.is-detail) .inner-caption>i{display:none}
+ .has-three:not(.is-detail) .inner-caption>small{font-size:7.5px}
+}
+@media(min-width:641px) and (max-width:1180px) and (min-height:651px) and (min-aspect-ratio:1/1){.has-three:not(.is-detail) .inner-caption{top:calc(var(--coast-horizon,45.4svh) + 2px)}}
+
+/* Centre the inscription between the SVG crest (y=8) and its flanks (y=380).
+   Its natural height also pulls every following chapter up by the same amount. */
+.home-sections{--shore-depth:380px}
+.shore-threshold{height:var(--shore-depth)}
+.home-sections:before{top:calc(var(--shore-depth) - 2px)}
+.epigraph{padding-top:calc(var(--shore-depth) * 194 / 380);padding-bottom:64px;display:flex;align-items:center;flex-direction:column;text-align:center;position:relative;scroll-margin-top:0}
+.epigraph blockquote{margin:0;width:100%;display:flex;flex-direction:column}
+.epigraph-text{font:400 clamp(50px,7.1vw,112px)/1.6 'Beaconia SuShi',var(--serif);font-synthesis:none;letter-spacing:.06em;white-space:nowrap;color:#304743;margin:-.8em 0 0}
+.epigraph-credit{display:block;margin-top:24px;font:400 12px/1.8 var(--serif);letter-spacing:.15em;color:#8c9690}
+.epigraph:after{content:'';display:block;width:min(86%,1120px);height:1px;background:linear-gradient(90deg,transparent,#cfd6ce 8%,#cfd6ce 92%,transparent);position:absolute;bottom:0;left:50%;transform:translateX(-50%)}
+.epigraph .reveal{transition-duration:1.3s;transform:translateY(20px)}
+.epigraph .reveal.is-visible{transform:none}
+.humanity-section{padding-top:64px;padding-bottom:150px}
+.humanity-layout{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(220px,.75fr) minmax(0,1.4fr);gap:clamp(65px,9vw,145px);max-width:1120px;margin:0 auto;align-items:stretch}
+.humanity-layout:before{content:'';position:absolute;z-index:-1;pointer-events:none;inset:-36px -5% -38px;background:radial-gradient(ellipse at 13% 24%,#bdcbb611,transparent 44%),radial-gradient(ellipse at 27% 88%,#c5a46b0d,transparent 35%);mask-image:radial-gradient(ellipse at center,#000 45%,transparent 72%)}
+.humanity-heading{position:relative;display:grid;grid-template-columns:auto auto;justify-content:center;align-items:stretch;gap:clamp(20px,2.5vw,36px)}
+.humanity-heading:before{content:'';position:absolute;z-index:-1;top:3%;bottom:3%;left:43%;width:1px;background:linear-gradient(transparent,#c8d1c7 16%,#c8d1c7 84%,transparent);opacity:.48}
+.humanity-title{position:relative;grid-column:1;grid-row:1;font:400 clamp(88px,8.8vw,132px)/1 var(--serif);display:flex;flex-direction:column;justify-content:space-between;align-items:center;color:#354c46;letter-spacing:.035em;text-shadow:0 1px 0 #f9f5e9}
+.humanity-title:after{content:'';position:absolute;z-index:-1;inset:7% 18% 7%;border:1px solid #c9d1c62d;border-radius:48% 52% 45% 55%;transform:rotate(-4deg)}
+.humanity-title>span{display:block}
+.humanity-title>span:nth-child(1){color:#2f514c}
+.humanity-title>span:nth-child(2){color:#37655f}
+.humanity-title>span:nth-child(3){color:#718477}
+.humanity-title>span:nth-child(4){color:#ad8b58}
+.humanity-emblem{grid-column:2;grid-row:1;align-self:end;justify-self:center;display:flex;flex-direction:column;align-items:center;gap:3px;width:44px;padding:3px 2px 7px;margin-bottom:8px;border:1px solid #bda47080;outline:1px solid #bda47029;outline-offset:3px;color:#a18655;background:#e3d6b315}
+.humanity-emblem svg{width:32px;height:39px;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.humanity-emblem b{font-size:8px;font-weight:400;letter-spacing:.18em;color:#8d8267}
+.humanity-side-label{position:relative;grid-column:2;grid-row:1;justify-self:center;writing-mode:vertical-rl;text-orientation:upright;align-self:start;white-space:nowrap;font:400 12px/1.8 var(--sans);letter-spacing:.28em;color:#74877f;margin-top:6px;border-left:1px solid #c5d0c7;padding-left:14px}
+.humanity-side-label:before{content:'';position:absolute;left:-2px;top:0;width:3px;height:34px;background:#b49762}
+.humanity-side-label.reveal{transform:translateY(18px)}
+.humanity-side-label.reveal.is-visible{transform:none}
+.humanity-prose{font:400 16px/2.15 'Songti SC','STSong','SimSun',serif;letter-spacing:.035em;color:#56635c;overflow-wrap:anywhere}
+.humanity-prose p{text-indent:2em;margin:0 0 29px;text-align:justify;text-wrap:pretty}
+.humanity-prose p:first-child{font-family:'Songti SC','STSong','SimSun',serif;font-size:18px;line-height:2.05;color:#3c554d}
+.humanity-prose p:last-child{margin-bottom:0;color:#3c5048}
+.humanity-prose strong{font-weight:500;color:#2c4940;background:linear-gradient(transparent 70%,#afbea22b 70%,#afbea22b 94%,transparent 94%);box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.humanity-prose .reveal{transform:translateY(18px);transition-duration:1s}
+.humanity-prose .reveal.is-visible{transform:none}
+
+@media(min-width:1700px){.epigraph:after{width:min(86%,1220px)}.humanity-layout{max-width:1220px;gap:170px}.humanity-prose{font-size:17px}.humanity-prose p:first-child{font-size:19px}.humanity-title{font-size:145px}}
+@media(max-width:1000px){.humanity-layout{grid-template-columns:190px minmax(0,1fr);gap:45px}.humanity-title{font-size:105px}.humanity-emblem{width:38px}.humanity-side-label{font-size:11px;padding-left:11px}.humanity-prose{font-size:15px}.humanity-prose p:first-child{font-size:17px}.humanity-section{padding-bottom:110px}}
+@media(max-width:760px){.humanity-layout{display:block;max-width:600px}.humanity-heading{display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:32px}.humanity-heading:before{top:0;bottom:auto;left:8%;width:84%;height:1px;background:linear-gradient(90deg,transparent,#c8d1c7 16%,#c8d1c7 84%,transparent)}.humanity-title{flex-direction:row;font-size:clamp(44px,11.5vw,68px);gap:.18em;line-height:1.2;padding-top:14px}.humanity-title:after{inset:10% 2% 0;border-radius:50%;transform:rotate(-2deg)}.humanity-emblem{position:absolute;right:4px;top:20px;margin:0;width:34px;padding:0 0 4px;gap:0}.humanity-emblem svg{width:27px;height:33px}.humanity-emblem b{font-size:7px}.humanity-side-label{writing-mode:horizontal-tb;font-size:11px;letter-spacing:.2em;margin:0;border-left:0;border-top:1px solid #c5d0c7;padding:8px 0 0}.humanity-side-label:before{left:0;top:-2px;width:34px;height:3px}.humanity-section{padding-top:44px;padding-bottom:90px}.epigraph-credit{margin-top:18px}}
+@media(max-width:640px){
+ .coast-brand{gap:7px}.coast-brand .brand-icon{flex:none;width:auto;height:37.3px;transform:none}
+ .coast-brand strong{font-size:17px;letter-spacing:.045em}.coast-brand small{font-size:7px;letter-spacing:.12em;margin-top:4px}
+ .edition{top:34px;font-size:8px;letter-spacing:.04em;gap:6px;right:6%}
+ .hero-copy{max-width:none;width:86%;bottom:calc(100% - var(--coast-horizon,45.4svh) + 28px)}
+ .hero-copy .eyebrow{font-size:9px;line-height:1.9;letter-spacing:.025em;gap:8px;margin-bottom:18px;max-width:100%}
+ .hero-copy .eyebrow>span{width:16px}.hero-copy .eyebrow b{max-width:calc(100% - 24px)}
+ body:not(.is-detail) .ring-caption{grid-template-columns:auto 15px auto;column-gap:8px;row-gap:3px}
+ body:not(.is-detail) .ring-caption>small{font-size:7px;letter-spacing:.01em}
+ .is-detail .outer-caption{align-items:flex-start}.is-detail .outer-caption .caption-name{font-size:7px;line-height:1.45}.is-detail .outer-caption .caption-suffix{display:block}
+ .home-sections{--shore-depth:260px}
+ .epigraph{padding-right:6%;padding-left:6%;padding-bottom:44px}
+ .epigraph-text{font-size:clamp(28px,8.7vw,53px);letter-spacing:.04em}
+ .epigraph-credit{font-size:10px;letter-spacing:.1em;margin-top:22px}
+ .humanity-heading{margin-bottom:28px}
+ .humanity-prose{font-size:14px;line-height:2.2;letter-spacing:.025em}.humanity-prose p:first-child{font-size:15px}.humanity-prose p{margin-bottom:24px}
+ .footer-brand strong{font-size:17px;letter-spacing:.04em}.footer-brand small{font-size:7px;letter-spacing:.1em}.footer-brand{gap:8px}.footer-brand .brand-icon{height:38.3px;transform:none}
+}
+@media(max-height:650px){.hero-copy .eyebrow{font-size:8px;margin-bottom:12px}.hero-copy{bottom:calc(100% - var(--coast-horizon,45.4svh) + 20px)}body:not(.is-detail) .outer-caption{top:calc(75svh - 18px)}}
+@media(max-height:500px){.coast-brand strong{font-size:18px}.coast-brand small{font-size:7px}.hero-copy{bottom:calc(100% - var(--coast-horizon,45.4svh) + 10px)}.hero-copy .eyebrow{font-size:7px;margin-bottom:10px}.edition{top:26px}}
+@media(prefers-reduced-motion:reduce){.epigraph .reveal,.humanity-prose .reveal,.humanity-side-label.reveal{transform:none}}
+
+/* The community destination keeps its original label but cannot be opened until a forum URL exists. */
+.footer-destinations .footer-disabled{display:inline-flex;align-items:center;margin-left:0;color:inherit;cursor:default}
